@@ -4,7 +4,48 @@
 	<meta charset="UTF-8">
 	<title>tab闭包</title>
 	<link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/tab闭包.css">
+	<style type="text/css">
+	.wrap {
+		width: 410px;
+		margin: 100px auto;
+	}
+	.tit {
+		float: left;
+		width: 100px;
+		height: 40px;
+	}
+	.tit span {
+		display: block;
+		width: 100px;
+		height: 40px;
+		background-color: #828999;
+		border: 1px solid black;
+		line-height: 40px;
+		font-size: 18px;
+		text-align: center;
+	}
+	.tit .select {
+		background-color: skyblue;
+	}
+	.box {
+		float: left;
+		width: 300px;
+		height: 167px;
+	}
+	.box div {
+		display: none;
+		width: 300px;
+		height: 167px;
+	}
+	.box div img {
+		display: block;
+		width: 300px;
+		height: 167px;
+	}
+	.box .show {
+		display: block;
+	}
+	</style>
 </head>
 <body>
 	<div class="wrap">
@@ -21,6 +62,26 @@
 			<div><img src="../images/t4.JPG" alt="" title=""></div>
 		</div>
 	</div>
-	<script src="../js/tab闭包.js"></script>
+	
+	<script type="text/javascript">
+		var titBtn = document.getElementById("tit").getElementsByTagName("span");
+		var conBtn = document.getElementById("con").getElementsByTagName("div");
+		var len = titBtn.length;
+
+		// 绑定事件
+		for (var i = 0; i < len; i++) {
+			titBtn[i].onclick = function(x) {
+				return function() {
+					for (var j = 0; j < len; j++) {
+						titBtn[j].className = "";
+						conBtn[j].className = "";
+					}
+					titBtn[x].className = "select";
+					conBtn[x].className = "show";
+				}
+			}(i);
+		}
+
+	</script>
 </body>
 </html>
