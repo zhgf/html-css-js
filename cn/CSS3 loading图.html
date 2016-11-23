@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 loading图</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.loading {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			border: 1px solid blue;
+			border-radius: 50%;
+			border-width: 4px 1px 1px 1px;
+			-webkit-animation: change 1s linear 1s infinite;
+		}
+		@-webkit-keyframes change {
+			form {
+				-webkit-transform: rotate(0deg);
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="loading"></div>
+</body>
+</html>

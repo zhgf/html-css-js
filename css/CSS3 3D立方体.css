@@ -1,0 +1,86 @@
+@charset "utf-8";
+body {
+	/*视角，在书写perspective的时候，或者设置值为0的时候，默认是无限远的距离。设置不同的视角大小，指的是距离物体的PX值。将视角放置在不同的层级上也会有不同的效果。例如把它放在body或者放在父级上面，效果是不一样的*/
+	/*视角一般放在body里面，效果会好看点，如果放在父级里面的话太近了，看起来就有点变形，放在越近看起来的效果越不好看*/
+	-webkit-perspective: 2000;
+}
+.wrap {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: 100px auto;
+	/*将变形的样式设置为3d的样式（放在父级上面）*/
+	-webkit-transform-style: preserve-3d;
+	/*-webkit-transform: rotateX(20deg) rotateY(20deg);*/
+	/*过渡是transition，动画是animation*/
+	/*-webkit-transition: all 2s ease;*/
+	/*第一个参数(rotage-change)是关键帧的名字　第二个参数是(2s)：需要过渡的时间 第三个参数(linear):是过渡的动画类型　第四个参数(1s):是过渡的延迟时间　第五个参数(infinite)：动画的循环次数是无限次 　第六个参数(alternate)：定义动画方式，动画播放在第偶数次向前播放，第奇数次向反方向播放*/
+	-webkit-animation: rotage-change 2s linear 1s infinite alternate;
+}
+/*关键帧*/
+@-webkit-keyframes rotage-change {
+	/*起始
+	from {
+		-webkit-transform: rotateX(0deg) rotateY(0deg);
+	}
+	结束
+	to {
+		-webkit-transform: rotateX(360deg) rotateY(360deg);
+	}*/
+	0% {
+		opacity: 0.2;
+		-webkit-transform: rotateX(0deg) rotateY(0deg);
+	}
+	/*结束*/
+	40% {
+		opacity: 0.4;
+		-webkit-transform: rotateX(90deg) rotateY(90deg);
+	}
+	80% {
+		opacity: 0.6;
+		-webkit-transform: rotateX(180deg) rotateY(180deg);
+	}
+	100% {
+		opacity: 0.8;
+		-webkit-transform: rotateX(360deg) rotateY(360deg);
+	}
+}
+.wrap div {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 300px;
+	height: 300px;
+	opacity: 0.2;
+	box-shadow: 0 0 5px 2px green,0 0 5px 2px green,0 0 5px 2px green,0 0 5px 2px green,0 0 5px 4px green,0 0 5px 4px green,0 0 5px 4px green;
+}
+.wrap div:nth-child(1) {
+	/*前面*/
+	background-color: yellow;
+	-webkit-transform: translateZ(150px);
+}
+.wrap div:nth-child(2) {
+	/*后面*/
+	background-color: skyblue;
+	-webkit-transform: translateZ(-150px);
+}
+.wrap div:nth-child(3) {
+	/*左面*/
+	background-color: gray;
+	-webkit-transform: rotateY(90deg) translateZ(150px);
+}
+.wrap div:nth-child(4) {
+	/*右面*/
+	background-color: pink;
+	-webkit-transform: rotateY(-90deg) translateZ(150px);
+}
+.wrap div:nth-child(5) {
+	/*左面*/
+	background-color: blue;
+	-webkit-transform: rotateX(90deg) translateZ(150px);
+}
+.wrap div:nth-child(6) {
+	/*右面*/
+	background-color: green;
+	-webkit-transform: rotateX(-90deg) translateZ(150px);
+}

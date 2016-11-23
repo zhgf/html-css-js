@@ -1,0 +1,28 @@
+@charset "utf-8";
+.wrap {
+	position: relative;
+	width: 400px;
+	height: 400px;
+	margin: 100px auto;
+	background-color: #bcc;
+}
+.main {
+	overflow: hidden;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+	width: 150px;
+	height: 150px;
+	box-shadow: 0 0 0 2px gray;
+	-webkit-transition: all 2s ease;
+	-webkit-transform: rotate(15deg);
+}
+.main img {
+	display: block;
+	width: 150px;
+	height: 150px;
+}
+.main:hover {
+	border-radius: 20px;
+	-webkit-transform: rotate(0deg) scaleX(1.5) scaleY(1.5) translateX(20px);
+}

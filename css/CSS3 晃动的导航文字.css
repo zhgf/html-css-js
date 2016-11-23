@@ -1,0 +1,109 @@
+@charset "utf-8";
+.wrap {
+	width: 800px;
+	margin: 0 auto;
+	background-color: #c8c8c8;
+}
+/*头部上下页的按钮的开始*/
+.wrap form input {
+	display: none;
+	width: 160px;
+	height: 50px;
+}
+.page-down,
+.page-up {
+	float: left;
+	width: 60px;
+	height: 30px;
+	margin: 50px 20px 0 200px;
+	background-color: #f55225;
+	color: #fff;
+}
+/*头部上下页的按钮的结束*/
+/*主体内容的开始*/
+.con {
+	float: left;
+	width: 1300px;
+	-webkit-transition: all 1s linear;
+}
+.main {
+	overflow: hidden;
+	width: 600px;
+	margin: 0 auto;
+	padding-top: 100px;
+}
+.con dl:hover {
+	background-color: #c25415;
+}
+.con dl {
+	position: relative;
+	float: left;
+	width: 600px;
+	height: 80px;
+	margin-bottom: 20px;
+	padding: 20px 0 0 10px;
+	background-color: #fff;
+	-webkit-box-shadow: 1px 2px 5px 1px #c46748 inset;
+	-moz-box-shadow: 1px 2px 5px 1px #c46748 inset;
+	box-shadow: 1px 2px 5px 1px #c46748 inset;
+	-webkit-transition: all 1s linear;
+}
+.con dl dt {
+	float: left;
+	padding: 0 20px 0 10px;
+}
+.con dt img {
+	float: left;
+	width: 60px;
+	height: 60px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-transition: all 0.1s linear;
+}
+.con dl:hover img {
+	-webkit-transform: scale(1.2); 
+}
+.con dd {
+	float: left;
+	width: 500px;
+	height: 60px;
+	-webkit-transition: all 0.1s linear;
+}
+.con dd h3     {
+	margin-bottom: 5px;
+	line-height: 20px;
+	font-size: 20px;
+	-webkit-transition: all 0.3s linear;
+}
+.con dl:hover h3 {
+	color: #fff;
+	font-weight: bolder;
+	font-size: 22px;
+}
+.con dd p {
+	line-height: 20px;
+	font-size: 14px;
+	-webkit-transition: all 0.3s linear;
+}
+.con dl:hover p {
+	color: #fff;
+	font-weight: bolder;
+	font-size: 16px;
+}
+.side {
+	-webkit-transition: all 1s linear;
+}
+.con span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 5px;
+	height: 100px;
+	background-color: #614206;
+}
+.con dl:hover .side {
+	-webkit-transform: translateX(595px) scaleX(1.5); 
+	background-color: blue;
+}
+/*主体内容的结束*/

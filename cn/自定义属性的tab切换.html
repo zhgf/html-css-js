@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>自定义属性的tab切换</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/自定义属性的tab切换.css">
+<style type="text/css">
+.wrap {
+width: 410px;
+margin: 100px auto;
+}
+.tit {
+float: left;
+width: 100px;
+height: 40px;
+}
+.tit span {
+display: block;
+width: 100px;
+height: 40px;
+background-color: #828999;
+border: 1px solid black;
+line-height: 40px;
+font-size: 18px;
+text-align: center;
+}
+.tit .select {
+background-color: skyblue;
+}
+.box {
+float: left;
+width: 300px;
+height: 167px;
+}
+.box div {
+display: none;
+width: 300px;
+height: 167px;
+}
+.box div img {
+display: block;
+width: 300px;
+height: 167px;
+}
+.box .show {
+display: block;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="tit" id="btn">
+			<span class="select">标题1</span>
+			<span>标题2</span>
+			<span>标题3</span>
+			<span>标题4</span>
+		</div>
+		<div class="box" id="con">
+			<div class="show"><img src="../images/t1.JPG" alt="" title=""></div>
+			<div><img src="../images/t2.JPG" alt="" title=""></div>
+			<div><img src="../images/t3.JPG" alt="" title=""></div>
+			<div><img src="../images/t4.JPG" alt="" title=""></div>
+		</div>
+	</div>
+	<script >
+		var btnArr = document.getElementById("btn").getElementsByTagName("span");
+		var conArr = document.getElementById("con").getElementsByTagName("div");
+		var len = btnArr.length;
+		for (var i = 0; i < len; i++) {
+			btnArr[i].index = i;
+			btnArr[i].onclick = function() {
+				for(var j = 0; j < len; j++) {
+					btnArr[j].className = "";
+					conArr[j].className = "";
+				}
+				btnArr[this.index].className = "select";
+				conArr[this.index].className = "show";
+				console.log(i);
+			}
+		}
+	</script>
+</body>
+</html>

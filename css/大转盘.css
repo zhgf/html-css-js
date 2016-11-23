@@ -1,0 +1,27 @@
+@charset "utf-8";
+.wrap {
+	position: relative;
+	width: 600px;
+	height: 700px;
+	margin: 100px auto;
+}
+.scroolbg {
+	width: 600px;
+	height: 700px;
+}
+.finger {
+	position: absolute;
+	left: 212px;
+	top: 85px;
+	width: 200px;
+	height: 40px;
+	z-index: 15;
+}
+.scrool {
+	position: absolute;
+	left: 106px;
+	top: 110px;
+	width: 400px;
+	height: 400px;
+	-webkit-transform: rotate(0deg);
+}

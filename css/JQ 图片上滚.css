@@ -1,0 +1,59 @@
+@charset "utf-8";
+.wrap {
+	width: 605px;
+	margin: 100px auto;
+	padding: 10px 0;
+	background-color: #658474;
+}
+.main {
+	overflow: hidden;
+	position: relative;
+	float: left;
+	width: 150px;
+	margin-left: 5px;
+}
+.main span {
+	display: block;
+	width: 150px;
+	height: 50px;
+	margin-bottom: 3px;
+	background-color: #658481;
+	line-height: 50px;
+	font-size: 24px;
+	text-align: center;
+	border-radius: 10px;
+	-webkit-box-shadow: 1px 2px 3px 1px #ccc inset;
+	-moz-box-shadow: 1px 2px 3px 1px #ccc inset;
+	box-shadow: 1px 2px 3px 1px #ccc inset;
+}
+.main div {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 150px;
+	height: 50px;
+	background-color: #ccc;
+	border-radius: 10px;
+	opacity: 0.4;
+}
+.outer {
+	overflow: hidden;
+	position: relative;
+	float: left;
+	width: 430px;
+	height: 214px;
+	margin: 0 10px;
+}
+.inner {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 450px;
+	height: 856px;
+}
+.inner img {
+	display: block;
+	width: 430px;
+	height: 214px;
+}

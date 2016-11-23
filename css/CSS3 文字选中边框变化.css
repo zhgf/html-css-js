@@ -1,0 +1,149 @@
+@charset "utf-8";
+.wrap {
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	padding: 100px 0;
+	border: 2px solid black;
+	background-color: black;
+}
+.con {
+	position: relative;
+	overflow: hidden;
+	width: 300px;
+	height: 400px;
+	margin: 0 auto;
+	background-color: gray;
+	line-height: 400px;
+	font-size: 20px;
+	text-align: center;
+}
+.con div {
+	position: absolute;
+	/*设置所有属性都进行过渡*/
+	-webkit-transition: all 1s ease 1s;
+}
+/*伪元素也需要过渡*/
+.con div:after {
+	position: absolute;
+	-webkit-transition: all 1s ease 1s;
+}
+/*左上角*/
+.con div:nth-child(1) {
+	/*左上角的水平方向*/
+	left: 0;
+	top: 0;
+	width: 300px;
+	height: 3px;
+	background-color: red;
+}
+.con div:nth-child(1):after {
+	/*左上角的垂直方向*/
+	left: 0px;
+	top: -400px;
+	width: 3px;
+	height: 400px;
+	background-color: yellow;
+	content: "\200B";
+}
+/*鼠标移入*/
+.con:hover div:nth-child(1) {
+	/*左上角的水平方向*/
+	width: 30px;
+	height: 5px;
+}
+/*鼠标移入*/
+.con:hover div:nth-child(1):after {
+	/*左上角的垂直方向*/
+	top: -370px;
+	width: 5px;
+}
+/*左下角*/
+.con div:nth-child(2) {
+	/*垂直方向*/
+	left: 0;
+	top: 0px;
+	width: 3px;
+	height: 400px;
+	background-color: red;
+}
+.con div:nth-child(2):after {
+	/*水平方向*/
+	left: -300px;
+	bottom: 0;
+	width: 300px;
+	height: 3px;
+	background-color: yellow;
+	content: "\200B";
+}
+/*鼠标移入*/
+.con:hover div:nth-child(2) {
+	/*垂直方向*/
+	top: 370px;
+	width: 5px;
+	height: 30px;
+}
+.con:hover div:nth-child(2):after {
+	/*水平方向*/
+	left: -270px;
+	height: 5px;
+}
+/*右上角*/
+.con div:nth-child(3) {
+	/*垂直方向*/
+	right: 0;
+	top: 0px;
+	width: 3px;
+	height: 400px;
+	background-color: red;
+}
+.con div:nth-child(3):after {
+	right: -300px;
+	top: 0;
+	width: 300px;
+	height: 3px;
+	background-color: yellow;
+	content: "\200B";
+}
+/*鼠标移入*/
+.con:hover div:nth-child(3) {
+	/*垂直方向*/
+	right: 0;
+	height: 30px;
+	width: 5px;
+}
+.con:hover div:nth-child(3):after {
+	/*水平方向*/
+	right: -270px;
+	height: 5px;
+}
+/*右下角*/
+.con div:nth-child(4) {
+	/*水平方向*/
+	right: 0;
+	bottom: 0;
+	width: 300px;
+	height: 3px;
+	background-color: red;
+}
+.con div:nth-child(4):after {
+	/*垂直方向*/
+	right: 0;
+	bottom: -400px;
+	width: 3px;
+	height: 400px;
+	background-color: yellow;
+	content: "\200B";
+}
+/*鼠标移入*/
+.con:hover div:nth-child(4) {
+	/*水平方向*/
+	right: 0px;
+	width: 30px;
+	height: 5px;
+}
+.con:hover div:nth-child(4):after {
+	/*垂直方向*/
+	bottom: -370px;
+	width: 5px;
+}

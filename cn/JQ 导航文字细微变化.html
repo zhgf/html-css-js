@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQ 导航文字细微变化</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jquery-1.11.2.min.js" charset="utf-8" type="text/javascript"></script>
+	<style>
+		.wrap {
+			width: 440px;
+			margin: 100px auto;
+		}
+		.wrap span {
+			float: left;
+			width: 100px;
+			height: 40px;
+			margin: 0 10px 10px 0;
+			background-color: #c65;
+			line-height: 40px;
+			font-size: 14px;
+			text-align: center;
+			text-indent : 10px;
+			-webkit-box-shadow: 1px 1px 3px 1px #ccc;
+			-moz-box-shadow: 1px 1px 3px 1px #ccc;
+			box-shadow: 1px 1px 3px 1px #ccc;
+		}
+		.wrap .sel {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<span>疲于奔命</span>
+		<span>李盛霖</span>
+		<span>枯人有坧</span>
+		<span>一块石头</span>
+		<span>天有不测</span>
+		<span>有朝一日</span>
+		<span>簇地破坏蝆</span>
+		<span>物腐虫生</span>
+		<span>方寸手</span>
+		<span>寸无奇不</span>
+		<span>不求上进</span>
+		<span>瑊真坏时辰</span>
+		<span>正是十在</span>
+		<span>顶天下辈</span>
+		<span>硬顶睼</span>
+		<span>石赤不夺趋</span>
+	</div>
+
+	<script>
+		// 功能描述：当鼠标移入相应导航栏标题的时候，标题文字向右缓慢运动，同时背景颜色变深
+		var box = $(".wrap span");
+		var len = $(".wrap span").length;
+
+		box.hover(function() {
+			$(this).addClass("sel").stop(true,true).animate({"textIndent": "30px"}, 500).siblings().removeClass("sel").stop(true,true).animate({"textIndent": "10px"}, 500);
+		})
+	</script>
+</body>
+</html>

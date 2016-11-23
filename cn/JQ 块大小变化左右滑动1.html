@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQ 块大小变化左右滑动</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jquery-1.11.2.min.js" charset="utf-8" type="text/javascript"></script>
+	<style>
+		.wrap {
+			position: relative;
+			width: 470px;
+			height: 600px;
+			-webkit-box-shadow: 1px 1px 2px 1px #ccc;
+			-moz-box-shadow: 1px 1px 2px 1px #ccc;
+			box-shadow: 1px 1px 2px 1px #ccc;
+		}
+		.main {
+			position: absolute;
+			left: 100px;
+			top: 400px;
+			width: 400px;
+			height: 300px;
+		}
+		.main span {
+			float: left;
+			width: 80px;
+			height: 200px;
+			margin-right: 10px;
+		}
+		.main span:nth-child(1) {
+			background-color: pink;
+		}
+		.main span:nth-child(2) {
+			background-color: skyblue;
+		}
+		.main span:nth-child(3) {
+			background-color: gray;
+		}
+		.main span:nth-child(4) {
+			background-color: #658;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="main">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<script>
+		var mains = $(".main span");
+
+		mains.click(function() {
+			var par = 100 - ($(this).index() / 3) * 100;
+			var _this = $(this);
+			_this.animate({
+				"width": "100px",
+				"height": "400px",
+				"margin-top": "-200px"
+			}).siblings().animate({
+				"width": "80px",
+				"height": "200px",
+				"margin-top": "0px"
+			}).parent().animate({
+				"left": par + "px"
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS圆周运动</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jquery-1.11.2.min.js" charset="utf-8" type="text/javascript"></script>
+	<style>
+		.wrap {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			border: 1px solid black;
+			border-radius: 50%;
+		}
+		.main {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap" id="outer">
+		<div class="main" id="inner"></div>
+	</div>
+	<script>
+		var outerBox = document.getElementById("outer");
+		var innerBox = document.getElementById("inner");
+		// 设置一个计时器
+		var timer = null;
+		// index是角度
+		var index = 0;
+
+		function move() {
+			index++;
+			// 这里是要把角度转换成弧度index * Math.PI/180
+			var jiaodu = index * Math.PI/180;
+			innerBox.style.left = 100 + Math.sin(jiaodu) * 100 - 10 + "px";
+			innerBox.style.top = 100 + Math.cos(jiaodu) * 100 - 10 + "px";
+		}
+		setInterval(move, 16);
+	</script>
+</body>
+</html>　　　　　　　　　　　

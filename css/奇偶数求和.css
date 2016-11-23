@@ -1,0 +1,28 @@
+@charset "utf-8";
+form {
+	width: 600px;
+	height: 300px;
+	margin: 100px auto;
+}
+.odd {
+	color: red;
+}
+.even {
+	color: blue;
+}
+.but {
+	width: 520px;
+	height: 40px;
+	margin-top: 20px;
+	padding-left: 80px;
+}
+#resetBox {
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+}
+.resetColor {
+	color: black;
+}

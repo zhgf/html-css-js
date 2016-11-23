@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>倒三角</title>
+	<link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+	<div class="wrap">
+	</div>
+	<script>
+	// 第一种方法
+		for(var i = 0; i < 10; i++) {
+			for(var j = 0; j < 10; j++) {
+				if(j < i) {
+					document.write("&nbsp");
+				} else {
+					document.write("*" + "&nbsp");
+				}
+			}
+			document.write("<br/>");
+		}
+		
+		// 第二种方法
+		// var arr = ["* ","* ","* ","* ","* ","* ","* ","* ","* ","* "];
+		// var str = "";
+		// for(var i = 0; i < 10; i++) {
+		// 	for(var j = 0; j < arr.length; j++) {
+		// 		str = str + arr[j];
+		// 	}
+		// 	arr[i] = " ";
+		// 	str =  str + "\n";
+		// } 
+		// 	console.log(str);
+	</script>
+</body>
+</html>

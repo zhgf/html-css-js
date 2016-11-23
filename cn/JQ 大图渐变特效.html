@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQ 大图渐变特效</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jquery-1.11.2.min.js" charset="utf-8" type="text/javascript"></script>
+	<style>
+		.main {
+			position: relative;
+			width: 300px;
+			height: 400px;
+		}
+		.main img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 300px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<img src="../images/(1).jpg" alt="" title="1">
+		<img src="../images/(2).jpg" alt="" title="2">
+		<img src="../images/(3).jpg" alt="" title="3">
+	</div>
+	<script>
+		var mains = $(".main img");
+		var len = $(".main img").length;
+		var imgIndex = 0;
+
+		setInterval(fade, 3000);
+		function fade() {
+			mains.eq(imgIndex).fadeIn(1000).siblings().fadeOut(1000);
+			imgIndex++;
+			if(imgIndex == len) {
+				imgIndex = 0;
+			}
+		}
+	</script>
+</body>
+</html>

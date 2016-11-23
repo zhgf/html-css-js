@@ -1,0 +1,40 @@
+@charset "utf-8";
+.list {
+	width: 400px;
+	margin: 100px auto;
+}
+.list li {
+	position: relative;
+	width: 400px;
+	height: 50px;
+	margin-bottom: 10px;
+	border: 1px solid #c8c8c8;
+	border-radius: 10px;
+	-webkit-transform-style: preserve-3d;
+	/*背景颜色不能跟过渡（transition）一起用，不然会发生闪频的问题*/
+	-webkit-transition: -webkit-transform 1s ease; 
+	/*-webkit-transform: rotateX(310deg);*/
+
+}
+.list li span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 400px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #f7f7f7;
+	line-height: 50px;
+	font-size: 18px;
+	text-align: center;
+}
+.list li span:nth-child(1) {
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	/*转动179deg 防止贴合在一起*/
+	-webkit-transform: rotateX(179deg) translateZ(1px);
+}
+.list span:nth-child(2) {
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+}

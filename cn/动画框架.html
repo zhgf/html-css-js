@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>动画框架</title>
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		.wrap {
+			width: 200px;
+			height: 200px;
+			margin: 0 auto;
+			background-color: #bc4;
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap" id="box"></div>
+	<div class="wrap" id="testBox"></div>
+	<script src="animation.js" charset="utf-8" type="text/javascript"></script>
+	<script>
+		// 功能描述：
+		// 1.实现瞬间动画（点击div，使div的宽度变300px)
+		// 2.提取起始值
+		// 3.每次点击div时，每次宽度增加10px
+		// 4.封装获取渲染后的样式（实现原来的宽度继续增加宽度）
+		// 注意：px单位需要用parseInt处理掉
+		// 5.利用计时器代替点击控制
+		// 6.达到一定距离停止运动
+		// 7.双向运动
+		// 8.实现了缓冲运动
+		// 9.自动贴合
+		// 10.多个物体运动
+		//     提取起始值
+		//     终点值
+		//     提取步数
+		// 11.透明度动画
+		// 12.链式运动
+
+			var changeBox = document.getElementById("box");
+			var box = document.getElementById("testBox");
+
+			box.onclick = function() {
+				move(box, {"marginLeft": "200", "opacity": "30"}, 30, function() {
+					move(box, {"marginTop": "200", "opacity": "50"}, 30, function(){
+						move(box, {"marginLeft": "0", "opacity": "60"}, 30, function(){
+							move(box, {"marginTop": "0", "opacity": "80"}, 30);
+						});
+					});
+				});
+			}
+			changeBox.onclick = function() {
+				move(changeBox, {"marginLeft": "200", "opacity": "30"}, 30, function() {
+					move(changeBox, {"marginTop": "200", "opacity": "50"}, 30, function(){
+						move(changeBox, {"marginLeft": "0", "opacity": "60"}, 30, function(){
+							move(changeBox, {"marginTop": "0", "opacity": "80"}, 30);
+						});
+					});
+				});
+			}
+
+
+	</script>
+</body>
+</html>

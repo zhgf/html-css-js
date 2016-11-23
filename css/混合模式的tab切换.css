@@ -1,0 +1,44 @@
+@charset "utf-8";
+.wrap {
+	width: 300px;
+	height: 240px;
+	margin: 100px auto;
+}	
+.tit {
+	width: 300px;
+	height: 40px;
+	background-color: #254;
+}
+.tit span {
+	float: left;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 24px;
+	text-align: center;
+	-webkit-box-shadow: 1px 1px 3px 1px #ccc;
+	-moz-box-shadow: 1px 1px 3px 1px #ccc;
+	box-shadow: 1px 1px 3px 1px #ccc;
+}
+.wrap .show {
+	background-color: #541250;
+}
+.con {
+	width: 300px;
+	height: 200px;
+	background-color: #884;
+	-webkit-box-shadow: 1px 1px 3px 1px #ccc;
+	-moz-box-shadow: 1px 1px 3px 1px #ccc;
+	box-shadow: 1px 1px 3px 1px #ccc;
+}
+.con div {
+	display: none;
+	width: 300px;
+	height: 200px;
+	line-height: 200px;
+	font-size: 18px;
+	text-align: center;
+}
+.con .select {
+	display: block;
+}

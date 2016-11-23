@@ -1,0 +1,41 @@
+@charset "utf-8";
+.wrap {
+	width: 410px;
+	margin: 100px auto;
+}
+.tit {
+	float: left;
+	width: 100px;
+	height: 40px;
+}
+.tit span {
+	display: block;
+	width: 100px;
+	height: 40px;
+	background-color: #828999;
+	border: 1px solid black;
+	line-height: 40px;
+	font-size: 18px;
+	text-align: center;
+}
+.tit .select {
+	background-color: skyblue;
+}
+.box {
+	float: left;
+	width: 300px;
+	height: 167px;
+}
+.box div {
+	display: none;
+	width: 300px;
+	height: 167px;
+}
+.box div img {
+	display: block;
+	width: 300px;
+	height: 167px;
+}
+.box .show {
+	display: block;
+}

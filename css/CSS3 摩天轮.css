@@ -1,0 +1,161 @@
+@charset "utf-8";
+.wrap {
+	position: relative;
+	width: 1000px;
+	height: 800px;
+	margin: 0 auto;
+	background: url("../images/wheel.png") no-repeat;
+	background-size: 100% 100%;
+}
+.main {
+	width: 1000px;
+	height: 800px;
+	background: url("../images/2.jpg") no-repeat;
+}
+.big {
+	position: absolute;
+	top: 415px;
+	right: 15px;
+	left: 30px;
+	width: 320px;
+	height: 100px;
+	margin: 0 auto;	
+	background:url("../images/big-title.png") no-repeat;
+	background-size: 100% 100%;
+}
+.title {
+	position: absolute;
+	top: 493px;
+	right: 2px;
+	left: -37px;
+	width: 210px;
+	height: 90px;
+	margin: 0 auto;
+	background: url("../images/title.png") no-repeat;
+	background-size: 100% 100%;
+}
+.arrow {
+	position: absolute;
+	top: 520px;
+	right: 0;
+	left: 30px;
+	width: 40px;
+	height: 50px;
+	margin: auto;
+	background:url("../images/arrow.png") no-repeat;
+	background-size: 100% 100%;
+}
+.post1 {
+	position: absolute;
+	left: 430px;
+	bottom: 0;
+	width: 160px;
+	height: 320px;
+	background: url("../images/bracketsmall.png") no-repeat;
+	background-size: 100% 100%;
+}
+.post2 {
+	position: absolute;
+	left: 377px;
+	bottom: 0;
+	width: 260px;
+	height: 320px;
+	background: url("../images/bracket.png") no-repeat;
+	background-size: 100% 100%;
+}
+.wheel {
+	position: absolute;
+	top: 235px;
+	left: 262px;
+	width: 500px;
+	height: 500px;
+	background: url("../images/fsw.png") no-repeat;
+	background-size: 100% 100%;
+	-webkit-animation: rotage-change 10s linear infinite;
+}
+@-webkit-keyframes rotage-change {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+.boy,
+.dog,
+.girl,
+.girls,
+.hairboy,
+.mimi,
+.mudog,
+.shamegirl {
+	position: absolute;
+	width: 100px;
+	height: 120px;
+	-webkit-transform-origin:center top;
+	-webkit-animation: change 10s linear infinite;
+}
+.boy {
+	top: 20px;
+	left:0;
+	right: 0;
+	margin: auto;
+	background: url("../images/boy.png") no-repeat;
+	background-size: 100% 100%;
+}
+.dog {
+	bottom: -100px;
+	left:0;
+	right: 0;
+	margin: auto;
+	background: url("../images/dog.png") no-repeat;
+	background-size: 100% 100%;
+}
+.girl {
+	top: 230px;
+	left:-20px;
+	margin: auto;
+	background: url("../images/girl.png") no-repeat;
+	background-size: 100% 100%;
+}
+.girls {
+	top: 220px;
+	right:-15px;
+	margin: auto;
+	background: url("../images/girls.png") no-repeat;
+	background-size: 100% 100%;
+}
+.hairboy {
+	top: 75px;
+	left: 60px;
+	background: url("../images/hairboy.png") no-repeat;
+	background-size: 100% 100%;
+}
+.shamegirl {
+	top: 75px;
+	right: 60px;
+	background: url("../images/shamegirl.png") no-repeat;
+	background-size: 100% 100%;
+}
+.mimi {
+	bottom: -10px;
+	left:40px;
+	margin: auto;
+	background: url("../images/mimi.png") no-repeat;
+	background-size: 100% 100%;
+}
+.mudog {
+	bottom: -25px;
+	right:50px;
+	margin: auto;
+	background: url("../images/mudog.png") no-repeat;
+	background-size: 100% 100%;
+}
+@-webkit-keyframes change {
+	0% {
+		-webkit-transform: rotate(360deg);
+	}
+	100% {
+		-webkit-transform: rotate(0deg);
+	}
+}

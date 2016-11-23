@@ -1,0 +1,103 @@
+@charset ("utf-8");
+body {
+	/*视角*/
+ 	-webkit-perspective: 3000;
+}
+.wrap {
+	width: 100px;
+	height: 300px;
+	margin: 100px auto;
+	/*变形模式：三维立体*/
+	-webkit-transform-style: preserve-3d;
+	/*动画*/
+	-webkit-animation: change 5s linear infinite;
+}
+/*关键帧*/
+@-webkit-keyframes change {
+	from {
+		-webkit-transform: rotateX(0deg);
+	}
+	to {
+		-webkit-transform: rotateX(360deg);
+	}
+}
+.box {
+	position: relative;
+	width: 50px;
+	height: 70px;
+	margin-bottom: 20px;
+	background-color: yellow;
+	-webkit-transform-style: preserve-3d;
+}
+.box:nth-child(1) {
+	-webkit-animation: box-top 5s linear infinite;
+}
+@-webkit-keyframes box-top {
+	from {
+		-webkit-transform: rotateY(0deg);
+	}
+	to {
+		-webkit-transform: rotateY(360deg);
+	}
+}
+/*这块要跟其它的两个块转的方向相反*/
+.box:nth-child(2) {
+	-webkit-animation: box-m 5s linear infinite;
+}
+@-webkit-keyframes box-m {
+	from {
+		-webkit-transform: rotateY(0deg);
+	}
+	to {
+		-webkit-transform: rotateY(-360deg);
+	}
+}
+.box:nth-child(3) {
+	/*linear：是过渡的动画类型  infinite：动画的循环次数是无限次*/
+	-webkit-animation: box-bot 5s linear infinite;
+}
+@-webkit-keyframes box-bot {
+	from {
+		/*rotate旋转的角度*/
+		-webkit-transform: rotateY(0deg);
+	}
+	to {
+		-webkit-transform: rotateY(360deg);
+	}
+}
+.box img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 70px;
+	margin-left: 10px;
+	-webkit-box-shadow: 2px 2px 3px 1px #c6c6c6;
+	-moz-box-shadow: 2px 2px 3px 1px #c6c6c6;
+	box-shadow: 2px 2px 3px 1px #c6c6c6;
+	
+}
+.box img:nth-child(1) {
+	-webkit-transform: translateZ(100px);
+}
+.box img:nth-child(2) {
+	-webkit-transform: rotateY(45deg) translateZ(100px);
+}
+.box img:nth-child(3) {
+	-webkit-transform: rotateY(90deg) translateZ(100px);
+}
+.box img:nth-child(4) {
+	-webkit-transform: rotateY(135deg) translateZ(100px);
+}
+.box img:nth-child(5) {
+	-webkit-transform: rotateY(180deg) translateZ(100px);
+}
+.box img:nth-child(6) {
+	-webkit-transform: rotateY(225deg) translateZ(100px);
+}
+.box img:nth-child(7) {
+	-webkit-transform: rotateY(270deg) translateZ(100px);
+}
+.box img:nth-child(8) {
+	-webkit-transform: rotateY(315deg) translateZ(100px);
+}

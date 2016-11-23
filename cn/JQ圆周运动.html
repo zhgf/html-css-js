@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQ圆周运动</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jquery-1.11.2.min.js" charset="utf-8" type="text/javascript"></script>
+	<style>
+		.wrap {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			border: 1px solid black;
+			border-radius: 50%;
+		}
+		.main {
+			position: absolute;
+			left: 90px;
+			top: 0;
+			width: 20px;
+			height: 20px;
+			border: 1px solid black;
+			border-radius: 50%;
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="main"></div>
+	</div>
+	<script>
+		var index = 0;
+		function star() {
+			index++;
+			var jiaodu = index * Math.PI/180;
+			$(".main").eq(0).css({
+				// 这里的100是大圆的半径，用100+的意思是小圆转动的方向是顺时针的方向
+				left: 100 + Math.cos(jiaodu) * 100 - 10 + "px",
+				top: 100 + Math.sin(jiaodu) * 100 - 10 + "px"
+			});
+		}
+		setInterval(star, 16)
+	</script>
+</body>
+</html>
