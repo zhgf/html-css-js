@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>RunJS</title>
+</head>
+<body>
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+#main{
+	position:relative;
+}
+.box{
+	float:left;
+	padding:15px 0 0 15px;
+}
+.pic{
+	padding:5px;
+	border:solid #ccc 1px;
+}
+.pic img{
+	width:100px;
+}
+</style>	
+<div id="main">
+	<div class="box">
+		<div class="pic">
+		 	<img src="http://h.hiphotos.baidu.com/lvpics/h=800/sign=fe42a709a344ad3431bf8a87e0a30c08/8cb1cb1349540923b235669a9058d109b2de49f1.jpg">
+		</div>		 
+	</div>			
+	<div class="box">
+		<div class="pic">
+	 		<img src="http://www.0739i.com.cn/data/attachment/portal/201609/12/150148sqo9l9oolo1fflko.jpg">
+		</div>			 
+	</div>	
+	<div class="box">
+		<div class="pic">
+	 		<img src="http://photoshow.108sq.com/user/2016/1008/12190756250003555431136644.jpg">
+		</div>
+	</div>	
+	<div class="box">
+		<div class="pic">
+	 		<img src="http://pic33.nipic.com/20130916/3420027_192919547000_2.jpg">
+		</div>
+	</div>	
+	<div class="box">
+		<div class="pic">
+	 		<img src="http://pic.58pic.com/58pic/13/40/15/74W58PICfa7_1024.jpg">
+		</div>
+	</div>	
+	<div class="box">
+		<div class="pic">
+	 		<img src="http://img01.taopic.com/151227/234973-15122G5550795.jpg">
+		</div>
+	</div>	
+	<div class="box">
+		<div class="pic">
+	 		<img src="http://www.0739i.com.cn/data/attachment/portal/201609/12/150149ku3qto4041hsuhue.jpg">
+		</div>
+	</div>
+	<div class="box">
+		<div class="pic">
+	 		<img src="http://tupian.enterdesk.com/2012/0606/gha/5/436.jpg">
+		</div>
+	</div>		
+</div>
+
+<script>
+window.onload=function(){
+	waterfall("main","box",3);
+};
+function waterfall(oparent,box,col){
+	var oparent=document.getElementById(oparent);
+	var oboxs=[];
+	var o_divs=oparent.getElementsByTagName('div');	
+	for(var i=0;i<o_divs.length; i++){
+		if(o_divs[i].className==box){
+			oboxs.push(o_divs[i]);
+		}
+	};
+	var per_w=oboxs[0].offsetWidth;
+	var ocolumH=[];//记录每一列的高度 （三列）
+	oparent.style.cssText='width:'+per_w*col+'px;';
+	for(var i=0;i<oboxs.length; i++){
+		if(i<col){
+			ocolumH.push(oboxs[i].offsetHeight);
+		}else{
+			var minH=Math.min.apply(null,ocolumH); //找出最小高度的那一列
+			var index_of_min=getIndex(ocolumH,minH); //最小高度列的序列
+			oboxs[i].style.position="absolute";
+			oboxs[i].style.top=minH+'px';
+			oboxs[i].style.left=index_of_min*per_w+'px';
+			ocolumH[index_of_min]+=oboxs[i].offsetHeight;
+		}
+	}
+	console.log(index_of_min);
+}
+function getIndex(ocolumH,minH){
+	for(var i=0;i<ocolumH.length; i++){
+		if(ocolumH[i]==minH){
+			return i;
+		}
+	}
+}
+
+</script>
+</body>
+</html>
