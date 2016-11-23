@@ -4,8 +4,49 @@
 	<meta charset="UTF-8">
 	<title>博看文思</title>
 	<link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/放大镜.css">
-	<script src="../js/jquery-1.11.2.min.js" charset="utf-8" type="text/javascript"></script>
+<style type="text/css">
+@charset "utf-8";
+.main {
+	position: relative;
+	width: 400px;
+	margin: 100px auto;
+}
+.conLeft {
+	float: left;
+	width: 200px;
+	height: 200px;
+}
+.conLeft span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	width: 100px;
+	height: 100px;
+	background-color: gray;
+	opacity: 0.4;
+	/*鼠标十字架*/
+	cursor: crosshair;
+}
+.conLeft img {
+	display: block;
+	width: 200px;
+	height: 200px;
+}
+.conRight {
+	overflow: hidden;
+	display: none;
+	float: left;
+	width: 200px;
+	height: 200px;
+}
+.conRight img {
+	display: block;
+	width: 400px;
+	height: 400px;
+}
+</style>
+
 </head>
 <body>
 	<div class="main" id="wrap" >
@@ -17,6 +58,7 @@
 			<img src="../images/1.jpg" alt="" title="" id="outer">
 		</div>
 	</div>
+	<script src="../js/jquery-1.11.2.min.js" charset="utf-8" type="text/javascript"></script>
 	<script src="../js/放大镜.js" charset="utf-8" type="text/javascript"></script>
 </body>
 </html>

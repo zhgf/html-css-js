@@ -4,7 +4,55 @@
 	<meta charset="UTF-8">
 	<title>CSS3 3D立体侧面图片</title>
 	<link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/CSS3 3D立体侧面图片.css">
+	
+<style type="text/css">
+@charset "utf-8";
+body {
+	 -webkit-perspective: 1000;
+}
+.main {
+	width: 700px;
+	height: 400px;
+	margin: 100px auto;
+	padding: 20px 0 0 30px;
+	background-color: skyblue;
+}
+.main div {
+	float: left;
+	position: relative;
+	width: 200px;
+	height: 300px;
+	border: 3px solid white;
+	/*-webkit-perspective: 1000;*/
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotateY(50deg);
+	-webkit-transition: all 1s ease;
+}
+.main div:hover {
+	-webkit-transform: rotateY(0deg);
+}
+.main div img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200px;
+	height: 300px;
+}
+.main div p {
+	position: absolute;
+	left: 30px;
+	bottom: -60px;
+	width: 140px;
+	height: 150px;
+	border: 3px solid white;
+	background-color: #368;
+	line-height: 50px;
+	color: #fff;
+	font-size: 24px;
+	text-align: center;
+	-webkit-transform: translateZ(30px);
+}
+</style>
 </head>
 <body>
 	<div class="main">

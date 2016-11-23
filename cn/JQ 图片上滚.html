@@ -4,8 +4,68 @@
 	<meta charset="UTF-8">
 	<title>JQ 图片上滚</title>
 	<link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/JQ 图片上滚.css">
-	<script src="../js/jquery-1.11.3.min.js" charset="utf-8" type="text/javascript"></script>
+<style type="text/css">
+@charset "utf-8";
+.wrap {
+	width: 605px;
+	margin: 100px auto;
+	padding: 10px 0;
+	background-color: #658474;
+}
+.main {
+	overflow: hidden;
+	position: relative;
+	float: left;
+	width: 150px;
+	margin-left: 5px;
+}
+.main span {
+	display: block;
+	width: 150px;
+	height: 50px;
+	margin-bottom: 3px;
+	background-color: #658481;
+	line-height: 50px;
+	font-size: 24px;
+	text-align: center;
+	border-radius: 10px;
+	-webkit-box-shadow: 1px 2px 3px 1px #ccc inset;
+	-moz-box-shadow: 1px 2px 3px 1px #ccc inset;
+	box-shadow: 1px 2px 3px 1px #ccc inset;
+}
+.main div {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 150px;
+	height: 50px;
+	background-color: #ccc;
+	border-radius: 10px;
+	opacity: 0.4;
+}
+.outer {
+	overflow: hidden;
+	position: relative;
+	float: left;
+	width: 430px;
+	height: 214px;
+	margin: 0 10px;
+}
+.inner {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 450px;
+	height: 856px;
+}
+.inner img {
+	display: block;
+	width: 430px;
+	height: 214px;
+}
+</style>
+	
 </head>
 <body>
 	<div class="wrap clearfix">
@@ -25,6 +85,25 @@
 			</div>
 		</div>
 	</div>
-	<script src="../js/JQ 图片上滚.js" charset="utf-8" type="text/javascript"></script>
+	
+<script src="../js/jquery-1.11.2.min.js" charset="utf-8" type="text/javascript"></script>
+	<script type="text/javascript">
+	// 功能描述：当鼠标移入当前块的时候，当前块的背景色会发生改变，并且那块背景会跟着鼠标往下移动，同时右边会显示相应的内容
+	var main = $(".main span");
+	var move = $(".main div");
+	var scrool = $(".inner")
+	main.hover(function() {
+		var index = $(this).index();
+		move.css({"display": "block"});
+		move.stop(true, true).animate({
+			"top": $(this).index() * 53 + "px"
+		}, 1000)
+		scrool.stop(true, true).animate({
+			"top": -($(this).index() * 214) + "px"
+		}, 1000)
+	}, function() {
+		move.css({"display": "none"});
+	})
+	</script>
 </body>
 </html>

@@ -4,7 +4,36 @@
 	<meta charset="UTF-8">
 	<title>奇偶数求和</title>
 	<link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/奇偶数求和.css">
+<style type="text/css">
+@charset "utf-8";
+form {
+	width: 600px;
+	height: 300px;
+	margin: 100px auto;
+}
+.odd {
+	color: red;
+}
+.even {
+	color: blue;
+}
+.but {
+	width: 520px;
+	height: 40px;
+	margin-top: 20px;
+	padding-left: 80px;
+}
+#resetBox {
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+}
+.resetColor {
+	color: black;
+}
+</style>
 </head>
 <body>
 	<form action="">
@@ -21,6 +50,62 @@
 		</div>
 		<div id="resetBox">显示的结果：<span id="result"></span></div>
 	</form>
-	<script src="../js/奇偶数求和.js" charset="utf-8" type="text/javascript"></script>
+
+<script type="text/javascript">
+var odd = document.getElementById("odd");
+var startInput = document.getElementById("start");
+var endInput = document.getElementById("end");
+var result = document.getElementById("result");
+var resetBox = document.getElementById("resetBox");
+var clearBtn = document.getElementById("clear");
+
+odd.onclick = function() {
+	var startValue = parseInt(startInput.value);
+	var endValue = parseInt(endInput.value);
+	if(isNaN(startValue)) {
+		alert("请输入起始值");
+	} else if(isNaN(endValue)) {
+		alert("请输入结束值");
+	} else if(endValue < startValue) {
+		alert("你输入的起始值大于结束值了");
+	} else {
+		var sum = 0;
+		for(var i = startValue; i <= endValue; i++) {
+			if(i % 2 == 1) {
+				sum = sum + i;			
+			}
+		}
+	result.innerHTML = sum;
+	resetBox.className = "odd";
+	}
+}
+even.onclick = function() {
+	var startValue = parseInt(startInput.value);
+	var endValue = parseInt(endInput.value);
+	if(isNaN(startValue)) {
+		alert("请输入起始值");
+	} else if(isNaN(endValue)) {
+		alert("请输入结束值");
+	} else if(endValue < startValue) {
+		alert("你输入的起始值大于结束值了");
+	} else {
+		var sum = 0;
+		for(var i = startValue; i <= endValue; i++) {
+			if(i % 2 == 0) {
+				sum = sum + i;
+			}
+		}
+	result.innerHTML = sum;
+	resetBox.className = "even";
+	}
+}
+
+clearBtn.onclick = function() {
+	result.innerHTML = "";
+	endInput.value = "";
+	startInput.value = "";
+	resetBox.className = "resetColor";
+}
+</script>
 </body>
 </html>

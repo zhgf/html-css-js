@@ -4,9 +4,52 @@
 	<meta charset="UTF-8">
 	<title>混合模式的tab切换</title>
 	<link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/混合模式的tab切换.css">
-	<script src="../js/jquery-1.11.3.min.js"></script>
-	<link rel="shortcut&nbsp;icon" href="../images/fu.ico">
+<style type="text/css">
+@charset "utf-8";
+.wrap {
+	width: 300px;
+	height: 240px;
+	margin: 100px auto;
+}	
+.tit {
+	width: 300px;
+	height: 40px;
+	background-color: #254;
+}
+.tit span {
+	float: left;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 24px;
+	text-align: center;
+	-webkit-box-shadow: 1px 1px 3px 1px #ccc;
+	-moz-box-shadow: 1px 1px 3px 1px #ccc;
+	box-shadow: 1px 1px 3px 1px #ccc;
+}
+.wrap .show {
+	background-color: #541250;
+}
+.con {
+	width: 300px;
+	height: 200px;
+	background-color: #884;
+	-webkit-box-shadow: 1px 1px 3px 1px #ccc;
+	-moz-box-shadow: 1px 1px 3px 1px #ccc;
+	box-shadow: 1px 1px 3px 1px #ccc;
+}
+.con div {
+	display: none;
+	width: 300px;
+	height: 200px;
+	line-height: 200px;
+	font-size: 18px;
+	text-align: center;
+}
+.con .select {
+	display: block;
+}
+</style>
 </head>
 <body>
 	<div class="wrap">
@@ -21,6 +64,43 @@
 			<div>娱乐八卦！</div>
 		</div>
 	</div>
-	<script src="../js/混合模式的tab切换.js"></script>
+
+	<script src="../js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+// 获取标签
+// 构造函数里面放的是属性
+function TabSwitch(tabTit, tabCon) {
+	this.titBtn = document.getElementById(tabTit).getElementsByTagName("span");
+	this.conBtn = document.getElementById(tabCon).getElementsByTagName("div");
+	this.len = this.titBtn.length;
+	// 调用绑定事件方法
+	this.addEvent();
+}
+// 绑定事件
+// 原型里面放的是方法
+TabSwitch.prototype.addEvent = function() {
+	// 防止指向错误
+	var _this = this;
+	for(var i = 0; i < this.len; i++) {
+		// 自定义属性
+		this.titBtn[i].index = i;
+		this.titBtn[i].onclick = function() {
+			_this.handleClass(this.index);
+		}
+	}
+}
+// 控制标签的样式
+TabSwitch.prototype.handleClass = function(index) {
+	// 清空类名
+	for(var i = 0; i < this.len; i++) {
+		this.titBtn[i].className = "";
+		this.conBtn[i].className = "";
+	}
+	// 添加类名
+	this.titBtn[index].className = "show";
+	this.conBtn[index].className = "select";
+}
+new TabSwitch("tits", "cons");
+</script>
 </body>
 </html>
