@@ -8,6 +8,7 @@
 	<style>
 		.main {
 			position: relative;
+			margin: 0 auto;
 			width: 300px;
 			height: 400px;
 		}
@@ -18,27 +19,128 @@
 			width: 300px;
 			height: 400px;
 		}
+		.main .bd{
+			position: absolute;
+			left: 50%;
+			bottom: 15px;
+			-webkit-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			-o-transform: translateX(-50%);
+			transform: translateX(-50%);
+		}
+		.main .bd span{
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			border-radius: 15px;
+			border: 1px solid #ccc;
+			background: #fff;
+		}
+		.main .bd span.on{
+			background: blue;
+		}
+		.pre,
+		.next{
+			position: absolute;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			-o-transform: translateY(-50%);
+			transform: translateY(-50%);
+			width: 45px;
+			height: 50px;
+			background: rgba(0,0,0,0.3);
+			color: #fff;
+			text-align: center;
+			line-height: 50px;
+			font-size: 40px;
+		}
+		.pre{
+			left: 15px;
+		}
+		.next{
+			right: 15px;
+		}
 	</style>
 </head>
 <body>
-	<div class="main">
-		<img src="../images/(1).jpg" alt="" title="1">
-		<img src="../images/(2).jpg" alt="" title="2">
-		<img src="../images/(3).jpg" alt="" title="3">
+	<div id="main" class="main">
+		<div class="hd">
+			<img src="../images/(1).jpg" alt="" title="1">
+			<img src="../images/(2).jpg" alt="" title="2">
+			<img src="../images/(3).jpg" alt="" title="3">
+			<img src="../images/(1).jpg" alt="" title="1">
+			<img src="../images/(2).jpg" alt="" title="2">
+			<img src="../images/(3).jpg" alt="" title="3">
+		</div>
+		<div class="bd">
+			<span></span>
+			<span></span>
+			<span class="on"></span>
+		</div>
+		<span class="pre"><</span>
+		<span class="next">></span>
 	</div>
 	<script>
-		var mains = $(".main img");
-		var len = $(".main img").length;
-		var imgIndex = 0;
+	function fadeTab(id){
+		// 初始定义
+		var box = $(id),
+			hdIterms = box.find('.hd').children(),
+			bdIterms = box.find('.bd').children(),
+			len = bdIterms.length,
+			preBtn = box.find('.pre'),
+			nextBtn = box.find('.next'),
+			imgIndex = len-1,
+			timer = null;
 
-		setInterval(fade, 3000);
-		function fade() {
-			mains.eq(imgIndex).fadeIn(1000).siblings().fadeOut(1000);
-			imgIndex++;
-			if(imgIndex == len) {
-				imgIndex = 0;
-			}
+		// 定时运行
+		function startFade(){
+			clearInterval(timer);
+			timer = setInterval(function(){
+				imgIndex++;
+				fadeMove()
+			},4000)
 		}
+		startFade();
+		// 切换函数
+		function fadeMove(){
+			console.log(imgIndex,len);
+			if(imgIndex<0){
+				imgIndex=len-1;
+			}
+			if(imgIndex==len){
+				imgIndex=0;
+			}
+			console.log(imgIndex);
+			
+			hdIterms.eq(imgIndex).fadeIn(1000)
+				.siblings().fadeOut(1500);
+			bdIterms.eq(imgIndex).addClass('on')
+				.siblings().removeClass('on');
+			startFade();
+		}
+		// 控制栏切换
+		bdIterms.each(function(){			
+			$(this).on('click',function(){
+				var i = $(this).index();
+				imgIndex = i;				
+				fadeMove();
+			})
+		})
+		// 上一个切换
+		preBtn.on('click',function(){
+			imgIndex--;
+			fadeMove();
+		})
+		// 下一个切换
+		nextBtn.on('click',function(){
+			imgIndex++;
+			fadeMove();
+		})		
+	}
+
+	var tabs = new fadeTab('#main')
+
 	</script>
 </body>
 </html>
